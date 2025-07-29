@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Video Generator
+
+A sophisticated automated video generator for creating viral short-form content from news articles, perfect for YouTube Shorts and TikTok.
+
+## Features
+
+- **News Article Selection**: Search and browse news articles from various sources
+- **AI Script Generation**: Automatically generate engaging scripts using OpenAI GPT-4
+- **Media Search**: Find relevant photos and videos from Pexels based on script keywords
+- **Voice Generation**: Create natural-sounding voiceovers with ElevenLabs
+- **Video Processing**: Combine media, voiceover, and karaoke-style text overlays
+- **Professional UI**: Modern, sleek interface built with Next.js and Tailwind CSS
+
+## Tech Stack
+
+- **Frontend**: Next.js 14, TypeScript, Tailwind CSS
+- **UI Components**: Custom components with Radix UI primitives
+- **APIs**: News API, OpenAI, ElevenLabs, Pexels
+- **Video Processing**: FFmpeg, Canvas API
+- **Styling**: Tailwind CSS with custom theme
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ installed
+- API keys for:
+  - News API
+  - OpenAI
+  - ElevenLabs
+  - Pexels
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cd video-generator
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Create a `.env` file with your API keys:
+```env
+NEWS_API_KEY=your_news_api_key
+OPENAI_API_KEY=your_openai_api_key
+ELEVENLABS_API_KEY=your_elevenlabs_api_key
+PEXELS_API_KEY=your_pexels_api_key
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Run the development server:
+```bash
+npm run dev
+```
 
-## Learn More
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-To learn more about Next.js, take a look at the following resources:
+## Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Select Article**: Search for news articles or browse the latest finance/tech news
+2. **Generate Script**: Choose script length (30s, 60s, or 90s) and generate an AI script
+3. **Choose Media**: Select photos and videos that match your script from Pexels
+4. **Voice Settings**: Pick a voice and adjust parameters for natural speech
+5. **Generate Video**: Combine all elements into a professional video
+6. **Export**: Preview and download your video
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Video Features
 
-## Deploy on Vercel
+- **Vertical Format**: Optimized for mobile viewing (9:16 aspect ratio)
+- **Karaoke Text**: Synchronized word-by-word highlighting
+- **Professional Transitions**: Smooth media transitions
+- **High Quality**: 1080x1920 resolution output
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## API Endpoints
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `/api/news` - Fetch news articles
+- `/api/generate-script` - Generate AI scripts
+- `/api/search-media` - Search Pexels media
+- `/api/generate-voice` - Generate voiceovers
+- `/api/generate-video` - Process final video
+
+## Development
+
+```bash
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+```
+
+## License
+
+This project is for internal use only.
